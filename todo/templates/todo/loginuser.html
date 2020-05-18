@@ -1,0 +1,23 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+
+
+<h1>Login</h1>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+    {% if error %}
+    <div class="alert alert-danger alert-dismissible fade show" role="danger">
+
+    <strong> {{ error }} </strong>
+    </div>
+    {% endif %}
+
+
+<form method="POST">
+    {% csrf_token %}
+{{form.as_p}}
+<button type="submit">Login</button>
+</form>
+</div>
+
+{% endblock %}}
